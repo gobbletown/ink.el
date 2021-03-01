@@ -1,0 +1,9 @@
+* =sentext=
+A file format for use with =pen.el=.
+
+This is a text format that is designed for easy editing, like normal text.
+Based on racket.
+
+- This is a document format that contains and evaluates to the document as it is meant to be viewed.
+- It also contains annotations for the transformations, inputs and outputs of those transformations.
+- It allows for re-evaluation.
