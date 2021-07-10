@@ -7,3 +7,6 @@ Based on racket.
 - This is a document format that contains and evaluates to the document as it is meant to be viewed.
 - It also contains annotations for the transformations, inputs and outputs of those transformations.
 - It allows for re-evaluation.
+
+** Reading
+https://generative.ink/posts/quantifying-curation/
