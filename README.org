@@ -13,6 +13,7 @@ The prototype will be in emacs lisp.
 
 ** Goals
 - Encode state as well as metadata about what model generated the text.
+- Retain information on the completion functions used to generate the document so parts can be re-evaluated at will.
 
 ** Provenance
 https://generative.ink/posts/quantifying-curation/
