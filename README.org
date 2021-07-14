@@ -16,6 +16,7 @@ The prototype will be in emacs lisp.
 - Retain information on the completion functions used to generate the document so parts can be re-evaluated at will.
 - Become a file format for encoding meta-documents.
   - A meta-document is like a template.
+- YASnippet compatibility (may be used as snippets).
 
 ** Provenance
 https://generative.ink/posts/quantifying-curation/
