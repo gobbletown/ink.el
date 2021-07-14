@@ -1,7 +1,9 @@
 * =sentext=
 A file format for use with =pen.el=.
 
-This is a text format that is designed for easy editing, like normal text.
+This is a text format that is designed for easy editing via emacs, like normal text.
+
+It is loaded and emacs text properties encode the state of the buffer.
 
 Based on racket?
 The prototype will be in emacs lisp.
