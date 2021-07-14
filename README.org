@@ -2,7 +2,9 @@
 A file format for use with =pen.el=.
 
 This is a text format that is designed for easy editing, like normal text.
-Based on racket.
+
+Based on racket?
+The prototype will be in emacs lisp.
 
 - This is a document format that contains and evaluates to the document as it is meant to be viewed.
 - It also contains annotations for the transformations, inputs and outputs of those transformations.
