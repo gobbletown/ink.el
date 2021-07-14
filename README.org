@@ -14,6 +14,8 @@ The prototype will be in emacs lisp.
 ** Goals
 - Encode state as well as metadata about what model generated the text.
 - Retain information on the completion functions used to generate the document so parts can be re-evaluated at will.
+- Become a file format for encoding meta-documents.
+  - A meta-document is like a template.
 
 ** Provenance
 https://generative.ink/posts/quantifying-curation/
