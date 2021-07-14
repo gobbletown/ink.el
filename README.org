@@ -5,7 +5,6 @@ This is a text format that is designed for easy editing via emacs, like normal t
 
 It is loaded and emacs text properties encode the state of the buffer, plus functions for regenerating text.
 
-Based on racket?
 The prototype will be in emacs lisp.
 
 - This is a document format that contains and evaluates to the document as it is meant to be viewed.
@@ -23,3 +22,6 @@ https://generative.ink/posts/quantifying-curation/
 
 ** Evaluation
 - It allows for re-evaluation.
+
+** Future
+Racket compiler.
