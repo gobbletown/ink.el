@@ -1,4 +1,4 @@
-* =pentext=
+* =ink=
 A file format for use with =pen.el=.
 
 This is a text format that is designed for easy editing via emacs, like normal text.
