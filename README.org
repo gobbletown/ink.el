@@ -10,6 +10,8 @@ The prototype will be in emacs lisp.
 - This is a document format that contains and evaluates to the document as it is meant to be viewed.
 - It also contains annotations for the transformations, inputs and outputs of those transformations.
 
+[[./pen-gehn.png]]
+
 ** Goals
 - Encode state as well as metadata about what model generated the text.
 - Retain information on the completion functions used to generate the document so parts can be re-evaluated at will.
