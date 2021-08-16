@@ -5,7 +5,7 @@ This is a text format that is designed for easy editing via emacs, like normal t
 
 It is loaded and emacs text properties encode the state of the buffer, plus functions for regenerating text.
 
-The prototype will be in emacs lisp.
+The prototype will be in emacs lisp using text properties.
 
 - This is a document format that contains and evaluates to the document as it is meant to be viewed.
 - It also contains annotations for the transformations, inputs and outputs of those transformations.
