@@ -12,6 +12,18 @@ The prototype will be in emacs lisp.
 
 [[./pen-gehn.png]]
 
+** Example
+Here is some /ink/ text as the value for the
+=task:= key in a yaml file.
+
+The text contains information on the engine,
+language and topic required to interpret the
+meaning of the task.
+
+#+BEGIN_SRC yaml -n :async :results verbatim code
+  task: #("Translate Haskell to Clojure" 0 27 (engine "OpenAI Davinci" language "English" topic "programming"))
+#+END_SRC
+
 ** Goals
 - Encode state as well as metadata about what model generated the text.
 - Retain information on the completion functions used to generate the document so parts can be re-evaluated at will.
