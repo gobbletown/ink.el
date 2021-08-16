@@ -1,9 +1,26 @@
-* =ink.el=
-A file format for use with =Pen.el=.
+* =Ink.el= - A file format to encode provenance for intelligibility
 
-This is a text format that is designed for easy editing via emacs, like normal text.
+The purpose of =Ink.el= is to encode within its text properties information about its own provenance.
 
-It is loaded and emacs text properties encode the state of the buffer, plus functions for regenerating text.
+It was created for =Pen.el=. It is generated
+when you generate text with =Pen.el= in order
+to encode how the text was generated.
+
+=Ink.el= is used by =Pen.el= when interpreting the
+meaning of text. Knowledge of which LM has
+generated a given text snippet and the
+language and context within a language
+understood by that model is important when
+inferring the meaning of that text, and it is
+for that reason that tasks and metaprompts may
+employ the =ink= format.
+
+This is a text format that is designed for
+easy editing via emacs, like normal text.
+
+It is loaded and emacs text properties encode
+the state of the buffer, plus functions for
+regenerating text.
 
 The prototype will be in emacs lisp using text properties.
 
