@@ -6,14 +6,20 @@ It was created for =Pen.el=. It is generated
 when you generate text with =Pen.el= in order
 to encode how the text was generated.
 
-=Ink.el= is used by =Pen.el= when interpreting the
-meaning of text. Knowledge of which LM has
-generated a given text snippet and the
-language and context within a language
-understood by that model is important when
-inferring the meaning of that text, and it is
-for that reason that tasks and metaprompts may
-employ the =ink= format.
+=Ink.el= is used by =Pen.el= when
+interpretation of the meaning of text is
+required. Knowledge of which LM has generated
+a given text snippet, the language of the text
+(understood by said model) and the context
+within that language are all important when
+interpreting the meaning of that text, and it
+is for that reason that tasks and metaprompts
+may employ the =ink= format.
+
+Quantifying curation is also important. After
+using many different LMs to assist in creating a
+document, the text may be analysed by reading
+information contained in the =ink= format.
 
 This is a text format that is designed for
 easy editing via emacs, like normal text.
