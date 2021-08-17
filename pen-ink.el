@@ -54,6 +54,7 @@
       (format "%S" (buffer-substring (region-beginning) (region-end)))
     (format "%S" (buffer-string))))
 
+;; TODO Ensure that only a particular list of text properties are preserved
 (defun ink-encode-from-textprops (s)
   (interactive (list (pen-textprops-in-region-or-buffer)))
   (let ((ink (string-replace "#(" "*(" s)))
