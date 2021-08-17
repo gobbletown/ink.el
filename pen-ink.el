@@ -89,7 +89,7 @@
 (defun ink-source-mode-before-save-hook (&optional args)
   (when (eq major-mode 'ink-source-mode)
     (ink-decode-source-buffer)
-    t))
+    nil))
 
 (defun ink-mode-after-save-hook ()
   (when (eq major-mode 'ink-mode)
@@ -167,18 +167,15 @@
   ;;   (setq data (asoc-merge data '((face ink-task))))))
 
   (let* ((ink
-          (let ((buf (new-buffer-from-string text))
-                (ink)
-                (start 1)
+          (let ((ink)
+                (start 0)
                 (end))
-            (with-current-buffer buf
-              (setq end (length text))
-              (loop for p in data do
-                    (let ((key (car p))
-                          (val (cdr p)))
-                      (put-text-property start end key val)))
-              (setq ink (format "%S" (buffer-string))))
-            (kill-buffer buf)
+            (setq end (length text))
+            (loop for p in data do
+                  (let ((key (car p))
+                        (val (cdr p)))
+                    (put-text-property start end key val text)))
+            (setq ink (format "%S" text))
             ink))
          (ink ink))
     (if (interactive-p)
@@ -186,6 +183,9 @@
             (pen-region-filter (eval `(lambda (s) ,ink)))
           (pen-etv ink))
       ink)))
+
+(defun ink-propertise (s)
+  (ink-decode (ink-encode-from-data s pen-last-prompt-data)))
 
 (comment
  (defun ink-remove-bad-properties ()
