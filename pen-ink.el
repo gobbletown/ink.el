@@ -33,7 +33,7 @@
   :group 'ink-faces)
 
 ;; When you save in one, the other is updated
-(define-derived-mode ink-mode text-mode "Ink"
+(define-derived-mode ink-mode fundamental-mode "Ink"
   "Ink mode"
   :after-hook
   (progn
@@ -176,7 +176,6 @@
               (loop for p in data do
                     (let ((key (car p))
                           (val (cdr p)))
-                      (message key)
                       (put-text-property start end key val)))
               (setq ink (format "%S" (buffer-string))))
             (kill-buffer buf)
