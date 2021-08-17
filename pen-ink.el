@@ -7,7 +7,8 @@
 ;; purpose.
 
 (define-derived-mode ink-mode text-mode "Ink"
-  "Ink mode")
+  "Ink mode"
+  :after-hook (ink-decode-buffer))
 
 (add-to-list 'auto-mode-alist '("\\.ink\\'" . ink-mode))
 
@@ -19,7 +20,50 @@
 
 ;; (add-to-list 'auto-mode-alist '("\\.ink\\'" . ink-edit-mode))
 
-(defun ink-encode (text &optional data)
+(defun pen-open-ink (&optional fp)
+  (if (not fp)
+      (setq fp (get-path)))
+  (let* ((dn (f-dirname fp))
+         (bn (basename fp))
+         (fn (file-name-sans-extension bn))
+         (ext (file-name-extension bn)))
+    (cond ((or (string-equal "ink" ext)
+               (string-equal "INK" ext)))
+          (ink-decode-buffer))))
+
+;; (add-hook 'find-file-hooks 'pen-open-ink)
+;; (remove-hook 'find-file-hooks 'pen-open-ink)
+
+(defun ink-mode-before-save-hook ()
+  (when (eq major-mode 'ink-mode)
+    (let ((ink
+           (ink-encode-from-textprops (pen-textprops-in-region-or-buffer))))
+      (erase-buffer)
+      (insert ink))))
+
+(add-hook 'before-save-hook #'ink-mode-before-save-hook)
+
+(defun ink-mode-after-save-hook ()
+  (when (eq major-mode 'ink-mode)
+    (ink-decode-buffer)))
+
+(add-hook 'after-save-hook #'ink-mode-after-save-hook)
+
+(defun pen-textprops-in-region-or-buffer ()
+  (if (region-active-p)
+      (format "%S" (buffer-substring (region-beginning) (region-end)))
+    (format "%S" (buffer-string))))
+
+(defun ink-encode-from-textprops (s)
+  (interactive (list (pen-textprops-in-region-or-buffer)))
+  (let ((ink (string-replace "#(" "*(" s)))
+    (if (interactive-p)
+        (if (pen-selected-p)
+            (pen-region-filter (eval `(lambda (s) ,ink)))
+          (pen-etv ink))
+      ink)))
+
+(defun ink-encode-from-data (text &optional data)
   (interactive (list (pen-selection) pen-last-prompt-data))
 
   (let* ((text (or
@@ -45,10 +89,10 @@
                               (cdr (assoc "PEN_TOPIC" data))
                               (pen-topic t)))))))
 
-    (if (not (cdr (assoc "PEN_ENGINE" data)))
-        (pen-alist-setcdr 'data "PEN_ENGINE" "OpenAI GPT-3"))
-    (if (not (cdr (assoc "PEN_LANGUAGE" data)))
-        (pen-alist-setcdr 'data "PEN_LANGUAGE" "English"))
+  (if (not (cdr (assoc "PEN_ENGINE" data)))
+      (pen-alist-setcdr 'data "PEN_ENGINE" "OpenAI GPT-3"))
+  (if (not (cdr (assoc "PEN_LANGUAGE" data)))
+      (pen-alist-setcdr 'data "PEN_LANGUAGE" "English"))
 
   (let* ((ink
           (let ((buf (new-buffer-from-string text))
@@ -72,6 +116,11 @@
           (pen-etv ink))
       ink)))
 
+(defun ink-depropertize (ink)
+  (string-replace "#(" "*(" ink)
+  ;; (ink-decode-buffer)
+  )
+
 (defun ink-decode (text)
   ;; Do not use (pen-selection t)
   ;; This assumes the text is visibly encoded
@@ -79,12 +128,19 @@
 
   (if (sor text)
       (let* ((text (if (string-match "\\*(" text)
-                       (str (eval-string (string-replace "*(" "#(" text)))
+                       (eval-string (string-replace "*(" "#(" text))
                      text)))
         (if (interactive-p)
             (if (pen-selected-p)
                 (pen-region-filter (eval `(lambda (s) ,text)))
               (pen-etv text))
           text))))
+(defalias 'ink-propertize 'ink-decode)
+
+(defun ink-decode-buffer ()
+  (interactive)
+  (let ((s (ink-decode (buffer-string))))
+    (erase-buffer)
+    (insert s)))
 
 (provide 'pen-ink)
