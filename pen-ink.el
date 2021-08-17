@@ -6,17 +6,24 @@
 ;; but the differentiation serves no useful
 ;; purpose.
 
+;; When you save in one, the other is updated
 (define-derived-mode ink-mode text-mode "Ink"
   "Ink mode"
-  :after-hook (ink-decode-buffer))
-
-(add-to-list 'auto-mode-alist '("\\.ink\\'" . ink-mode))
+  :after-hook
+  (progn
+    (add-hook 'write-contents-functions #'ink-mode-before-save-hook)))
 
 ;; See the ink source.
 ;; This mode is not meant as a regular editing/prompting environment.
 ;; Rather, it's like looking at HTML source.
 (define-derived-mode ink-source-mode emacs-lisp-mode "Ink source"
-  "Ink source mode")
+  "Ink source mode"
+  :after-hook
+  (progn
+    (add-hook 'write-contents-functions #'ink-source-mode-before-save-hook)
+    (ink-decode-source-buffer)))
+
+(add-to-list 'auto-mode-alist '("\\.ink\\'" . ink-source-mode))
 
 ;; (add-to-list 'auto-mode-alist '("\\.ink\\'" . ink-edit-mode))
 
@@ -29,29 +36,47 @@
          (ext (file-name-extension bn)))
     (cond ((or (string-equal "ink" ext)
                (string-equal "INK" ext)))
-          (ink-decode-buffer))))
+          (ink-decode-source-buffer))))
 
 ;; (add-hook 'find-file-hooks 'pen-open-ink)
 ;; (remove-hook 'find-file-hooks 'pen-open-ink)
 
-(defun ink-mode-before-save-hook ()
+(defun ink-mode-before-save-hook (&optional args)
+  ;; (throw 'ink-mode-save-source t)
   (when (eq major-mode 'ink-mode)
-    (let ((ink
-           (ink-encode-from-textprops (pen-textprops-in-region-or-buffer))))
-      (erase-buffer)
-      (insert ink))))
+    (let* ((ink
+            (ink-encode-from-textprops (pen-textprops-in-region-or-buffer)))
+           (bufn (s-replace-regexp "^\\*\\(.*\\)\\*$" "\\1" (buffer-name)))
+           (bn (basename bufn)))
+      (save-window-excursion
+        (with-current-buffer (switch-to-buffer bn)
+          (erase-buffer)
+          (insert ink)
+          (beginning-of-buffer)
+          (save-buffer)))
+      ;; (error "abort real save")
+      ;; (throw 'ink-mode-save-source t)
+      )
+    t))
 
-(add-hook 'before-save-hook #'ink-mode-before-save-hook)
+(defun ink-source-mode-before-save-hook (&optional args)
+  (when (eq major-mode 'ink-source-mode)
+    (ink-decode-source-buffer)
+    t))
 
 (defun ink-mode-after-save-hook ()
   (when (eq major-mode 'ink-mode)
-    (ink-decode-buffer)))
+    ;; Write back to the original .ink buffer
+    ;; (ink-decode-source-buffer)
+    ))
 
 (add-hook 'after-save-hook #'ink-mode-after-save-hook)
 
 ;; TODO The combination of doing both of these here may result in less duplication and less random changing of the file
 ;; - filter only properties I want
 ;; - sort
+;; TODO
+;; - clear all
 (defun pen-textprops-in-region-or-buffer ()
   (if (region-active-p)
       (format "%S" (buffer-substring (region-beginning) (region-end)))
@@ -60,7 +85,7 @@
 ;; TODO Ensure that only a particular list of text properties are preserved
 (defun ink-encode-from-textprops (s)
   (interactive (list (pen-textprops-in-region-or-buffer)))
-  (let ((ink (string-replace "#(" "*(" s)))
+  (let ((ink s))
     (if (interactive-p)
         (if (pen-selected-p)
             (pen-region-filter (eval `(lambda (s) ,ink)))
@@ -113,7 +138,7 @@
               (setq ink (format "%S" (buffer-string))))
             (kill-buffer buf)
             ink))
-         (ink (string-replace "#(" "*(" ink)))
+         (ink ink))
     (if (interactive-p)
         (if (pen-selected-p)
             (pen-region-filter (eval `(lambda (s) ,ink)))
@@ -121,9 +146,31 @@
       ink)))
 
 (defun ink-depropertize (ink)
-  (string-replace "#(" "*(" ink)
-  ;; (ink-decode-buffer)
+  ink
+  ;; (ink-decode-source-buffer)
   )
+
+(defun ink-remove-bad-properties ()
+  (interactive)
+  (remove-text-properties
+   (point-min)
+   (point-max)
+   (let ((lst (ink-list-all-bad-properties (buffer-string))))
+     (-interleave lst (make-list (length lst) nil)))))
+
+;; (etv (pps (ink-list-all-properties (buffer-string))))
+(defun ink-list-all-bad-properties (s)
+  (-filter
+   (lambda (e)
+     (not (and (stringp (car e))
+               (string-match "^PEN_" (car e)))))
+   (-uniq
+    (flatten-once
+     (loop for inl in (object-intervals s)
+           collect
+           (loop for (p v) on (nth 2 inl) while v
+                 collect
+                 (list p v)))))))
 
 (defun ink-decode (text)
   ;; Do not use (pen-selection t)
@@ -131,8 +178,8 @@
   (interactive (list (pen-selection)))
 
   (if (sor text)
-      (let* ((text (if (string-match "\\*(" text)
-                       (eval-string (string-replace "*(" "#(" text))
+      (let* ((text (if (string-match "#(" text)
+                       (eval-string text)
                      text)))
         (if (interactive-p)
             (if (pen-selected-p)
@@ -141,10 +188,21 @@
           text))))
 (defalias 'ink-propertize 'ink-decode)
 
-(defun ink-decode-buffer ()
+(defun ink-decode-source-buffer ()
   (interactive)
-  (let ((s (ink-decode (buffer-string))))
-    (erase-buffer)
-    (insert s)))
+  (if (eq major-mode 'ink-source-mode)
+      (let* ((s (ink-decode (buffer-string)))
+             (fp (buffer-file-name))
+             (bufname (concat "*" fp "*")))
+        (let ((bexists (buffer-exists bufname)))
+          (with-current-buffer (switch-to-buffer bufname)
+            (if (or (not bexists)
+                    (yn "Reload from .ink?"))
+                (progn
+                  (erase-buffer)
+                  (insert s)
+                  (beginning-of-buffer)))
+            (ink-mode)
+            (current-buffer))))))
 
 (provide 'pen-ink)
