@@ -11,7 +11,9 @@
 
 (add-to-list 'auto-mode-alist '("\\.ink\\'" . ink-mode))
 
-;; See the ink source
+;; See the ink source.
+;; This mode is not meant as a regular editing/prompting environment.
+;; Rather, it's like looking at HTML source.
 (define-derived-mode ink-source-mode emacs-lisp-mode "Ink source"
   "Ink source mode")
 
