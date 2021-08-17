@@ -145,10 +145,26 @@
                               (cdr (assoc "PEN_TOPIC" data))
                               (pen-topic t)))))))
 
-  (if (not (cdr (assoc "PEN_ENGINE" data)))
+  (if (not (sor (cdr (assoc "PEN_ENGINE" data))))
       (pen-alist-setcdr 'data "PEN_ENGINE" "OpenAI GPT-3"))
-  (if (not (cdr (assoc "PEN_LANGUAGE" data)))
+  (if (not (sor (cdr (assoc "PEN_LANGUAGE" data))))
       (pen-alist-setcdr 'data "PEN_LANGUAGE" "English"))
+
+  ;; (cond
+  ;;  ((and
+  ;;    (assoc "INK_TYPE" data)
+  ;;    (string-equal
+  ;;     "generated"
+  ;;     (or (sor (cdr (assoc "INK_TYPE" data)))
+  ;;         "")))
+  ;;   (setq data (asoc-merge data '((face ink-generated)))))
+  ;;  ((and
+  ;;    (assoc "INK_TYPE" data)
+  ;;    (string-equal
+  ;;     "task"
+  ;;     (or (sor (cdr (assoc "INK_TYPE" data)))
+  ;;         "")))
+  ;;   (setq data (asoc-merge data '((face ink-task))))))
 
   (let* ((ink
           (let ((buf (new-buffer-from-string text))
@@ -172,32 +188,33 @@
           (pen-etv ink))
       ink)))
 
-(defun ink-depropertize (ink)
-  ink
-  ;; (ink-decode-source-buffer)
-  )
+(comment
+ (defun ink-remove-bad-properties ()
+   (interactive)
+   (remove-text-properties
+    (point-min)
+    (point-max)
+    (let ((lst (ink-list-all-bad-properties (buffer-string))))
+      (-interleave lst (make-list (length lst) nil)))))
 
-(defun ink-remove-bad-properties ()
-  (interactive)
-  (remove-text-properties
-   (point-min)
-   (point-max)
-   (let ((lst (ink-list-all-bad-properties (buffer-string))))
-     (-interleave lst (make-list (length lst) nil)))))
+ ;; (etv (pps (ink-list-all-properties (buffer-string))))
+ (defun ink-list-all-bad-properties (s)
+   (-filter
+    (lambda (e)
+      (not (and (stringp (car e))
+                (string-match "^PEN_" (car e)))))
+    (-uniq
+     (flatten-once
+      (loop for inl in (object-intervals s)
+            collect
+            (loop for (p v) on (nth 2 inl) while v
+                  collect
+                  (list p v)))))))
 
-;; (etv (pps (ink-list-all-properties (buffer-string))))
-(defun ink-list-all-bad-properties (s)
-  (-filter
-   (lambda (e)
-     (not (and (stringp (car e))
-               (string-match "^PEN_" (car e)))))
-   (-uniq
-    (flatten-once
-     (loop for inl in (object-intervals s)
-           collect
-           (loop for (p v) on (nth 2 inl) while v
-                 collect
-                 (list p v)))))))
+ (defun ink-depropertize (ink)
+   ink
+   ;; (ink-decode-source-buffer)
+   ))
 
 (defun ink-decode (text)
   ;; Do not use (pen-selection t)
