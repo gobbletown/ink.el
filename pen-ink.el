@@ -49,6 +49,9 @@
 
 (add-hook 'after-save-hook #'ink-mode-after-save-hook)
 
+;; TODO The combination of doing both of these here may result in less duplication and less random changing of the file
+;; - filter only properties I want
+;; - sort
 (defun pen-textprops-in-region-or-buffer ()
   (if (region-active-p)
       (format "%S" (buffer-substring (region-beginning) (region-end)))
