@@ -1,4 +1,4 @@
-*("But when the file is loaded, they will be seen as the generated text only.
+#("But when the file is loaded, they will be seen as the generated text only.
 With, perhaps, some syntax highlighting." 0 114 ("PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "###
 # English<pen-colon> Hello
 # Russian<pen-colon> Zdravstvuyte
