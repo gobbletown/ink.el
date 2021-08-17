@@ -1,5 +1,5 @@
 *("But when the file is loaded, they will be seen as the generated text only.
-With, perhaps, some syntax highlighting." 0 75 ("PEN_END_POS" 410 "PEN_N_COMPLETIONS" "5" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "#" "PEN_MODE" "" "PEN_TEMPERATURE" "0.5" "PEN_MAX_TOKENS" "400" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "###
+With, perhaps, some syntax highlighting." 0 75 (fontified t "PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "###
 # English<pen-colon> Hello
 # Russian<pen-colon> Zdravstvuyte
 # Italian<pen-colon> Salve
@@ -16,7 +16,7 @@ With, perhaps, some syntax highlighting." 0 75 ("PEN_END_POS" 410 "PEN_N_COMPLET
 ###
 # English<pen-colon> ;; Use lexical scope. It<pen-singlequote>s more reliable than lots of params.
 ;; Expected variables<pen-colon>
-# Japanese<pen-colon>" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English" fontified nil) 75 114 (fontified nil "PEN_END_POS" 410 "PEN_N_COMPLETIONS" "5" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "#" "PEN_MODE" "" "PEN_TEMPERATURE" "0.5" "PEN_MAX_TOKENS" "400" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "###
+# Japanese<pen-colon>" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "400" "PEN_TEMPERATURE" "0.5" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "#" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "5" "PEN_END_POS" 410) 75 114 ("PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "###
 # English<pen-colon> Hello
 # Russian<pen-colon> Zdravstvuyte
 # Italian<pen-colon> Salve
@@ -33,4 +33,4 @@ With, perhaps, some syntax highlighting." 0 75 ("PEN_END_POS" 410 "PEN_N_COMPLET
 ###
 # English<pen-colon> ;; Use lexical scope. It<pen-singlequote>s more reliable than lots of params.
 ;; Expected variables<pen-colon>
-# Japanese<pen-colon>" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English") 114 115 (fontified nil))
+# Japanese<pen-colon>" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "400" "PEN_TEMPERATURE" "0.5" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "#" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "5" "PEN_END_POS" 410 fontified t) 114 115 (fontified t))
