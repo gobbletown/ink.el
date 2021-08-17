@@ -6,6 +6,17 @@
 ;; but the differentiation serves no useful
 ;; purpose.
 
+(define-derived-mode ink-mode text-mode "Ink"
+  "Ink mode")
+
+(add-to-list 'auto-mode-alist '("\\.ink\\'" . ink-mode))
+
+;; See the ink source
+(define-derived-mode ink-source-mode emacs-lisp-mode "Ink source"
+  "Ink source mode")
+
+;; (add-to-list 'auto-mode-alist '("\\.ink\\'" . ink-edit-mode))
+
 (defun ink-encode (text &optional data)
   (interactive (list (pen-selection) pen-last-prompt-data))
 
