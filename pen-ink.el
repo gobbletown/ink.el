@@ -32,18 +32,23 @@
         (progn
           (pen-alist-setcdr
            'data "PEN_ENGINE"
-           (read-string-hist "engine: " (cdr (assoc "PEN_ENGINE" data))))
+           (read-string-hist "engine: "
+                             (cdr (assoc "PEN_ENGINE" data))))
           (pen-alist-setcdr
            'data "PEN_LANGUAGE"
-           (read-string-hist "language: " (cdr (assoc "PEN_LANGUAGE" data))))
+           (read-string-hist "language: "
+                             (cdr (assoc "PEN_LANGUAGE" data))))
           (pen-alist-setcdr
            'data "PEN_TOPIC"
-           (read-string-hist "topic: " (cdr (assoc "PEN_TOPIC" data)))))))
+           (read-string-hist "topic: "
+                             (or
+                              (cdr (assoc "PEN_TOPIC" data))
+                              (pen-topic t)))))))
 
-  (if (not (cdr (assoc "PEN_ENGINE" data)))
-      (pen-alist-setcdr 'data "PEN_ENGINE" "OpenAI GPT-3"))
-  (if (not (cdr (assoc "PEN_LANGUAGE" data)))
-      (pen-alist-setcdr 'data "PEN_LANGUAGE" "English"))
+    (if (not (cdr (assoc "PEN_ENGINE" data)))
+        (pen-alist-setcdr 'data "PEN_ENGINE" "OpenAI GPT-3"))
+    (if (not (cdr (assoc "PEN_LANGUAGE" data)))
+        (pen-alist-setcdr 'data "PEN_LANGUAGE" "English"))
 
   (let* ((ink
           (let ((buf (new-buffer-from-string text))
