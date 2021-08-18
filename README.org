@@ -4,7 +4,6 @@ Ink is a file format to encode provenance for intelligibility.
 + Pen.el :: https://github.com/semiosis/pen.el
 + Moire's blog on Quantifying Curation :: https://generative.ink/posts/quantifying-curation/
 
-** Introducing Ink.el
 [[./ink.png]]
 
 The purpose of =Ink.el= is to encode within
