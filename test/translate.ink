@@ -9,7 +9,7 @@ Definitions:
 文法高亮
     NLG: The use of colors and text attributes
     to differentiate elements of a computer
-    language" 0 16 (face ink-generated "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/translate-from-world-language-x-to-y.prompt" "PEN_END_POS" 353 "PEN_N_COMPLETIONS" "5" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "#" "PEN_MODE" "" "PEN_TEMPERATURE" "0.5" "PEN_MAX_TOKENS" "400" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "###
+    language" 0 16 ("PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "###
 # English<pen-colon> Hello
 # Russian<pen-colon> Zdravstvuyte
 # Italian<pen-colon> Salve
@@ -25,7 +25,7 @@ Definitions:
 # Indonesian<pen-colon> Selamat ulang tahun<pen-bang>
 ###
 # English<pen-colon> But when the file is loaded
-# Japanese<pen-colon>" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English") 16 63 (insert-in-front-hooks (annotate--remove-annotation-property) fontified t "PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "###
+# Japanese<pen-colon>" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "400" "PEN_TEMPERATURE" "0.5" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "#" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "5" "PEN_END_POS" 353 "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/translate-from-world-language-x-to-y.prompt" face ink-generated) 16 63 ("PEN_END_POS" 410 "PEN_N_COMPLETIONS" "5" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "#" "PEN_MODE" "" "PEN_TEMPERATURE" "0.5" "PEN_MAX_TOKENS" "400" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "###
 # English<pen-colon> Hello
 # Russian<pen-colon> Zdravstvuyte
 # Italian<pen-colon> Salve
@@ -42,7 +42,7 @@ Definitions:
 ###
 # English<pen-colon> ;; Use lexical scope. It<pen-singlequote>s more reliable than lots of params.
 ;; Expected variables<pen-colon>
-# Japanese<pen-colon>" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "400" "PEN_TEMPERATURE" "0.5" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "#" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "5" "PEN_END_POS" 410) 63 64 (face default insert-in-front-hooks (annotate--remove-annotation-property) fontified t "PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "###
+# Japanese<pen-colon>" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English" fontified t insert-in-front-hooks (annotate--remove-annotation-property)) 63 64 ("PEN_END_POS" 410 "PEN_N_COMPLETIONS" "5" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "#" "PEN_MODE" "" "PEN_TEMPERATURE" "0.5" "PEN_MAX_TOKENS" "400" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "###
 # English<pen-colon> Hello
 # Russian<pen-colon> Zdravstvuyte
 # Italian<pen-colon> Salve
@@ -59,7 +59,7 @@ Definitions:
 ###
 # English<pen-colon> ;; Use lexical scope. It<pen-singlequote>s more reliable than lots of params.
 ;; Expected variables<pen-colon>
-# Japanese<pen-colon>" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "400" "PEN_TEMPERATURE" "0.5" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "#" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "5" "PEN_END_POS" 410) 64 91 (fontified t "PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "###
+# Japanese<pen-colon>" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English" fontified t insert-in-front-hooks (annotate--remove-annotation-property) face default) 64 91 ("PEN_END_POS" 410 "PEN_N_COMPLETIONS" "5" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "#" "PEN_MODE" "" "PEN_TEMPERATURE" "0.5" "PEN_MAX_TOKENS" "400" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "###
 # English<pen-colon> Hello
 # Russian<pen-colon> Zdravstvuyte
 # Italian<pen-colon> Salve
@@ -76,7 +76,7 @@ Definitions:
 ###
 # English<pen-colon> ;; Use lexical scope. It<pen-singlequote>s more reliable than lots of params.
 ;; Expected variables<pen-colon>
-# Japanese<pen-colon>" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "400" "PEN_TEMPERATURE" "0.5" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "#" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "5" "PEN_END_POS" 410) 91 103 (fontified t "PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "###
+# Japanese<pen-colon>" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English" fontified t) 91 103 ("PEN_END_POS" 410 "PEN_N_COMPLETIONS" "5" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "#" "PEN_MODE" "" "PEN_TEMPERATURE" "0.5" "PEN_MAX_TOKENS" "400" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "###
 # English<pen-colon> Hello
 # Russian<pen-colon> Zdravstvuyte
 # Italian<pen-colon> Salve
@@ -93,7 +93,7 @@ Definitions:
 ###
 # English<pen-colon> ;; Use lexical scope. It<pen-singlequote>s more reliable than lots of params.
 ;; Expected variables<pen-colon>
-# Japanese<pen-colon>" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "400" "PEN_TEMPERATURE" "0.5" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "#" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "5" "PEN_END_POS" 410) 103 138 (fontified t) 138 206 ("INK_TYPE" "generated" face ink-generated "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/very-witty-pick-up-lines-for-a-topic.prompt" "PEN_END_POS" 1592 "PEN_N_COMPLETIONS" "15" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "##" "PEN_MODE" "" "PEN_TEMPERATURE" "0.8" "PEN_MAX_TOKENS" "60" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "The following are witty openers for Tinder<pen-colon>
+# Japanese<pen-colon>" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English" fontified t) 103 138 (fontified t) 138 206 ("PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "The following are witty openers for Tinder<pen-colon>
 ###
 TOPIC<pen-colon> CATS AND DRUGS
 - Can I call you my catnip?
@@ -159,7 +159,7 @@ TOPIC<pen-colon> COFFEE
 - Do you like coffee? Cuz I like you a latte.
 ###
 TOPIC<pen-colon> STAR WARS
--" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English") 206 207 ("INK_TYPE" "generated" face ink-generated "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/very-witty-pick-up-lines-for-a-topic.prompt" "PEN_END_POS" 1592 "PEN_N_COMPLETIONS" "15" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "##" "PEN_MODE" "" "PEN_TEMPERATURE" "0.8" "PEN_MAX_TOKENS" "60" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "The following are witty openers for Tinder<pen-colon>
+-" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "60" "PEN_TEMPERATURE" "0.8" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "##" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "15" "PEN_END_POS" 1592 "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/very-witty-pick-up-lines-for-a-topic.prompt" face ink-generated "INK_TYPE" "generated") 206 207 (rear-nonsticky t "PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "The following are witty openers for Tinder<pen-colon>
 ###
 TOPIC<pen-colon> CATS AND DRUGS
 - Can I call you my catnip?
@@ -225,7 +225,7 @@ TOPIC<pen-colon> COFFEE
 - Do you like coffee? Cuz I like you a latte.
 ###
 TOPIC<pen-colon> STAR WARS
--" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English" rear-nonsticky t) 207 222 (fontified t) 222 226 ("INK_TYPE" "generated" face ink-generated "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/translate-from-world-language-x-to-y.prompt" "PEN_END_POS" 345 "PEN_N_COMPLETIONS" "5" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "#" "PEN_MODE" "" "PEN_TEMPERATURE" "0.5" "PEN_MAX_TOKENS" "400" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "###
+-" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "60" "PEN_TEMPERATURE" "0.8" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "##" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "15" "PEN_END_POS" 1592 "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/very-witty-pick-up-lines-for-a-topic.prompt" face ink-generated "INK_TYPE" "generated") 207 222 (fontified t) 222 226 ("PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "###
 # English<pen-colon> Hello
 # Russian<pen-colon> Zdravstvuyte
 # Italian<pen-colon> Salve
@@ -241,44 +241,44 @@ TOPIC<pen-colon> STAR WARS
 # Indonesian<pen-colon> Selamat ulang tahun<pen-bang>
 ###
 # English<pen-colon> syntax highlighting
-# mandarin<pen-colon>" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English") 227 274 ("INK_TYPE" "generated" "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/define-word-for-glossary.prompt" "PEN_END_POS" 132 "PEN_N_COMPLETIONS" "5" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "
-
-" "PEN_MODE" "" "PEN_TEMPERATURE" "0.5" "PEN_MAX_TOKENS" "200" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "Glossary of terms.
+# mandarin<pen-colon>" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "400" "PEN_TEMPERATURE" "0.5" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "#" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "5" "PEN_END_POS" 345 "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/translate-from-world-language-x-to-y.prompt" face ink-generated "INK_TYPE" "generated") 227 274 ("PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "Glossary of terms.
 
 ossified
 Definition<pen-colon> Turn into bone or bony tissue.
 
 syntax highlighting in the context of computing
-Definition<pen-colon>" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English") 274 317 ("INK_TYPE" "generated" "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/define-word-for-glossary.prompt" "PEN_END_POS" 132 "PEN_N_COMPLETIONS" "5" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "
+Definition<pen-colon>" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "200" "PEN_TEMPERATURE" "0.5" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "
 
-" "PEN_MODE" "" "PEN_TEMPERATURE" "0.5" "PEN_MAX_TOKENS" "200" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "Glossary of terms.
-
-ossified
-Definition<pen-colon> Turn into bone or bony tissue.
-
-syntax highlighting in the context of computing
-Definition<pen-colon>" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English" insert-in-front-hooks (annotate--remove-annotation-property)) 317 318 ("INK_TYPE" "generated" "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/define-word-for-glossary.prompt" "PEN_END_POS" 132 "PEN_N_COMPLETIONS" "5" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "
-
-" "PEN_MODE" "" "PEN_TEMPERATURE" "0.5" "PEN_MAX_TOKENS" "200" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "Glossary of terms.
+" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "5" "PEN_END_POS" 132 "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/define-word-for-glossary.prompt" "INK_TYPE" "generated") 274 317 (insert-in-front-hooks (annotate--remove-annotation-property) "PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "Glossary of terms.
 
 ossified
 Definition<pen-colon> Turn into bone or bony tissue.
 
 syntax highlighting in the context of computing
-Definition<pen-colon>" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English" display nil insert-in-front-hooks (annotate--remove-annotation-property) face default) 318 329 ("INK_TYPE" "generated" "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/define-word-for-glossary.prompt" "PEN_END_POS" 132 "PEN_N_COMPLETIONS" "5" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "
+Definition<pen-colon>" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "200" "PEN_TEMPERATURE" "0.5" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "
 
-" "PEN_MODE" "" "PEN_TEMPERATURE" "0.5" "PEN_MAX_TOKENS" "200" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "Glossary of terms.
-
-ossified
-Definition<pen-colon> Turn into bone or bony tissue.
-
-syntax highlighting in the context of computing
-Definition<pen-colon>" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English") 329 330 ("INK_TYPE" "generated" "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/define-word-for-glossary.prompt" "PEN_END_POS" 132 "PEN_N_COMPLETIONS" "5" "PEN_CACHE" nil "PEN_FLAGS" nil "PEN_TOP_K" "" "PEN_TOP_P" "1" "PEN_STOP_SEQUENCE" "
-
-" "PEN_MODE" "" "PEN_TEMPERATURE" "0.5" "PEN_MAX_TOKENS" "200" "PEN_MIN_TOKENS" "" "PEN_MODEL" "davinci" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_PROMPT" "Glossary of terms.
+" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "5" "PEN_END_POS" 132 "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/define-word-for-glossary.prompt" "INK_TYPE" "generated") 317 318 (face default insert-in-front-hooks (annotate--remove-annotation-property) display nil "PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "Glossary of terms.
 
 ossified
 Definition<pen-colon> Turn into bone or bony tissue.
 
 syntax highlighting in the context of computing
-Definition<pen-colon>" "PEN_ENGINE" "OpenAI GPT-3" "PEN_LANGUAGE" "English" rear-nonsticky t))
+Definition<pen-colon>" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "200" "PEN_TEMPERATURE" "0.5" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "
+
+" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "5" "PEN_END_POS" 132 "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/define-word-for-glossary.prompt" "INK_TYPE" "generated") 318 329 ("PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "Glossary of terms.
+
+ossified
+Definition<pen-colon> Turn into bone or bony tissue.
+
+syntax highlighting in the context of computing
+Definition<pen-colon>" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "200" "PEN_TEMPERATURE" "0.5" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "
+
+" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "5" "PEN_END_POS" 132 "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/define-word-for-glossary.prompt" "INK_TYPE" "generated") 329 330 (rear-nonsticky t "PEN_LANGUAGE" "English" "PEN_ENGINE" "OpenAI GPT-3" "PEN_PROMPT" "Glossary of terms.
+
+ossified
+Definition<pen-colon> Turn into bone or bony tissue.
+
+syntax highlighting in the context of computing
+Definition<pen-colon>" "PEN_LM_COMMAND" "openai-complete.sh" "PEN_MODEL" "davinci" "PEN_MIN_TOKENS" "" "PEN_MAX_TOKENS" "200" "PEN_TEMPERATURE" "0.5" "PEN_MODE" "" "PEN_STOP_SEQUENCE" "
+
+" "PEN_TOP_P" "1" "PEN_TOP_K" "" "PEN_FLAGS" nil "PEN_CACHE" nil "PEN_N_COMPLETIONS" "5" "PEN_END_POS" 132 "PEN_PROMPT_PATH" "/home/shane/source/git/spacemacs/prompts/prompts/define-word-for-glossary.prompt" "INK_TYPE" "generated"))
