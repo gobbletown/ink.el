@@ -1,5 +1,7 @@
-* =Ink.el=
-Ink is a file format to encode provenance for intelligibility.
+* =Ink.el= (_Intermediate knowlege_ in emacs)
+Ink is a file format to encode provenance for intelligibility. It's like an an
+intermediate language in that its metadata is used at the point of final
+interpretation of the annotated text by a user or a language model.
 
 + Pen.el :: https://github.com/semiosis/pen.el
 + Moire's blog on Quantifying Curation :: https://generative.ink/posts/quantifying-curation/
