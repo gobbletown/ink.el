@@ -8,9 +8,10 @@ interpretation of the annotated text by a user or a language model.
 
 [[./ink.png]]
 
-The purpose of =Ink.el= is to encode within
-its text properties information about its own
-provenance.
+The purpose of Ink.el is to encode within its text properties information
+about its own provenance. What was the intended meaning behind parts of the
+text? Annotations made by the writer are encoded in Ink. Where did the text
+originate? Data of a LM’s influence is also included.
 
 It was created for =Pen.el=. It is generated
 when you generate text with =Pen.el= in order
