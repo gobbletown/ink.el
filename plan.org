@@ -1,0 +1,2 @@
+- Encode other information from the user such as "writer's personal
+  uncertainty" regarding the segment of text.
